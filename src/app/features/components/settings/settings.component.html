@@ -1,0 +1,38 @@
+<div class="container-fluid">
+    <div class="row privacy-settings">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    Privacy settings
+                </div>
+                <div class="card-body">
+                    <div>Following are different settings which you can configure:</div>
+                    <div class="mt-2">
+                        <input type="button" class="btn btn-primary btn-sm" value="Configure cookie settings"
+                            (click)="showCookiePopup()" />
+                    </div>
+
+                    <div class="mt-4">
+                        <div>
+                            <span class="notes-title">Notes/Observations:</span>
+                        </div>
+                        <div>
+                            <ul>
+                                <li>I noticed that APi response from server is having inconsistent naming conventions
+                                    i.e all properties are in pascal case but property accordion is of camel case.
+                                </li>
+                                <li>Since Js/Angular follows camel casing, I have created a utility service and added
+                                    function in it which converts the response to came case and adheres to UI coding
+                                    standards and the model created in angular can have came case properties 
+                                </li>
+                                <li>There are typos in property names from server response i.e CategoyHeading ,  CategoyText , so word category is misspelled in APi response.</li>
+                                <li>Added code to configure server url dynamically, which makes it deployable using any CI/CD tools.</li>
+                                <li>Added spinner and Toastr while loading and saving for better user experience</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
