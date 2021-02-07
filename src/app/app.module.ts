@@ -7,11 +7,11 @@ import { WebApiProviderService } from './core/services/web-api-provider.service'
 import { SettingsComponent } from './features/components/settings/settings.component';
 import { CookieSettingsComponent } from './features/components/cookie-settings/cookie-settings.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
-import { SwitchComponent } from './features/shared/components/switch/switch.component';
 import { FormsModule } from '@angular/forms';
 import { ToastrModule, ToastrService } from 'ngx-toastr';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SwitchComponent } from './shared/components/switch/switch.component';
 
 
 @NgModule({
@@ -23,7 +23,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   ],
   imports: [
     ToastrModule.forRoot({
-      positionClass : 'toast-bottom-right'
+      positionClass: 'toast-bottom-right'
     }),
     BrowserModule,
     BrowserAnimationsModule,
@@ -34,7 +34,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ModalModule.forRoot()
   ],
   providers: [
-    {provide: APP_INITIALIZER, useFactory: webApiProviderFactory, deps: [WebApiProviderService], multi: true},
+    { provide: APP_INITIALIZER, useFactory: webApiProviderFactory, deps: [WebApiProviderService], multi: true },
     ToastrService
   ],
   bootstrap: [AppComponent],
@@ -43,6 +43,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 export class AppModule { }
 
 
-export function webApiProviderFactory(provider: WebApiProviderService){
+export function webApiProviderFactory(provider: WebApiProviderService) {
   return () => provider.load();
 }
